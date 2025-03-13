@@ -1,18 +1,19 @@
 import Link from "next/link";
-import { BsPersonCircle } from "react-icons/bs";
+import { ReactNode } from "react";
 
 interface CardProps {
-  index: string;
   name: string;
+  path: string;
+  icon: ReactNode;
 }
 
-export const RaceCard = ({ index, name }: CardProps) => {
+export const SimpleCard = ({ name, path, icon }: CardProps) => {
   return (
     <Link
-      href={`/races/${index}`}
+      href={path}
       className="cursor-pointer bg-gray-800 hover:bg-gray-700 p-4 rounded-lg flex flex-col items-center justify-center gap-2"
     >
-      <BsPersonCircle size={32} />
+      {icon}
       <span>{name}</span>
     </Link>
   );
