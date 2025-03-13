@@ -9,19 +9,10 @@ const headerOptions = [
 
 export const Header = () => {
   return (
-    <div className="flex justify-between items-center px-10 border-b fixed w-full">
+    <div className="flex justify-between items-center px-10 border-b fixed w-full bg-gray-900">
       <nav className="flex items-center gap-4">
-        <Link
-          href={"/"}
-          className="pr-8"
-        >
-          <Image
-            src="/DD-logo.png"
-            alt="DeD logo"
-            layout="intrinsic"
-            width={120}
-            height={30}
-          />
+        <Link href={"/"} className="pr-8">
+          <Image src="/DD-logo.png" alt="DeD logo" width={120} height={30} />
         </Link>
         {headerOptions.map((option) => (
           <Link
@@ -34,7 +25,7 @@ export const Header = () => {
         ))}
       </nav>
       <span className="cursor-pointer">
-        <MdOutlineDarkMode size={24}/>
+        <MdOutlineDarkMode size={24} />
       </span>
     </div>
   );

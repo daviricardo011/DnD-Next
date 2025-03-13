@@ -9,17 +9,17 @@ export async function getAllRaces(): Promise<BaseEntity[]> {
     if (res.data && res.data.results) {
       return res.data.results;
     } else {
-      console.error("Erro: Resposta inválida da API.", res.data);
+      console.error("Erro: API invalid answer.", res.data);
       return [];
     }
   } catch (error) {
     if (axios.isAxiosError(error)) {
       console.error(
-        "Erro ao buscar races:",
+        "getAllRaces error:",
         error.response?.data || error.message
       );
     } else {
-      console.error("Erro desconhecido ao buscar races:", error);
+      console.error("getAllRaces unkown error:", error);
     }
     return [];
   }
@@ -32,11 +32,11 @@ export async function getRaceByIndex(index: string): Promise<Race | null> {
   } catch (error) {
     if (axios.isAxiosError(error)) {
       console.error(
-        "Erro ao buscar races:",
+        "getRaceByIndex error:",
         error.response?.data || error.message
       );
     } else {
-      console.error("Erro desconhecido ao buscar races:", error);
+      console.error("getRaceByIndex unkown error:", error);
     }
     return null;
   }

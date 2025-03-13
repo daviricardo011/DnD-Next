@@ -1,8 +1,6 @@
 import { BaseEntity } from "./BaseEntity";
 
-export interface Race {
-  index: string;
-  name: string;
+export interface Race extends BaseEntity {
   speed: number;
   ability_bonuses: {
     ability_score: BaseEntity;
@@ -29,6 +27,5 @@ export interface Race {
   language_desc: string;
   traits: BaseEntity[];
   subraces: BaseEntity[];
-  url: string;
   updated_at: string;
 }
